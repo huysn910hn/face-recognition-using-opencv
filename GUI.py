@@ -26,15 +26,12 @@ def run_extractface():
 def run_facerecognition():
     
     nhandien_path = os.path.join(os.getcwd(), "face_recognition.py")
-    # Capture output and errors from the subprocess
     process = subprocess.run(
         ["python", nhandien_path],
         stdout=subprocess.PIPE, 
         stderr=subprocess.PIPE, 
-        text=True  # Ensures output is a string
-    )
+        text=True  
 
-    # Display the output in the GUI
     if process.stdout:
         log_text.insert(tk.END, f"Output:\n{process.stdout}\n")
     if process.stderr:
